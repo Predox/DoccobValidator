@@ -4,39 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="functions.js"></script>
+    <script src="script.js"></script>
     <script>
+
         function ler() {
             const content = document.querySelector(".exibir");
             const [file] = document.querySelector("input[type=file]").files;
             const leitura = new FileReader();
-            var a
 
-            leitura.addEventListener(
-                "load",
-                () => {
-                    // O conteúdo do arquivo é lido como string
-                    // Dividimos o conteúdo por linhas, criando um array
-                    a = leitura.result.split('\r\n');
-                    console.log(a);
-                    
-                    // Exibe as linhas no elemento com a classe 'exibir'
-                    content.innerHTML = a.join('<br>');
-                },
-                false
-            );
-            var b = a.lenght
-            console.log(b)  // Exibe o array no console
+            leitura.addEventListener("load", () => {
+                // O conteúdo do arquivo é lido como string
+                // Dividimos o conteúdo por linhas, criando um array
+                const a = leitura.result.split('\r\n'); // Correção aqui: 'a' dentro do escopo do evento
+                console.log(a);
+                
+                // Exibe as linhas no elemento com a classe 'exibir'
+                content.innerHTML = a.join('<br>');
+                
+                // Agora você pode acessar a.length dentro do evento
+                var b = a.length; // Correção aqui: uso correto de 'length'
+                console.log(b);  // Exibe o tamanho do array no console
+            }, false);
 
+            // Verifica se o arquivo foi selecionado
             if (file) {
-                leitura.readAsText(file);
+                leitura.readAsText(file);  // Lê o arquivo como texto
             }
         }
-        var b = [2,3,4,6]
-        b.length
     </script>
 </head>
 <body>
-    <input type="file" id="arq">
+    <input type="file" id="arq" onchange="ler()">
     <input type="button" value="Executar" onclick="ler()">
     <br><p id = "exibir" class="exibir" name = "exibir"></p>
 </body>

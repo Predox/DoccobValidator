@@ -29,8 +29,20 @@ function ValidateLine(linha){
         case "355":
             Ccclv(linha)
         break
+
+        case "":
+            Empty()
+        break
     }
 }
 
+function Teste(){
+    console.log("aaa")
+}
+
+
+function ValidateArq(){
+    
+}
 
 

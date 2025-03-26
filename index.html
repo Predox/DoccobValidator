@@ -16,28 +16,45 @@
 <body>
     <header>
         <h1>Doccob Validator</h1>
-        <p>Lorem ipsum dolor sit teste amet, consectetur adipisicing elit. Explicabo dolor tenetur nemo, consequatur modi facere quidem ipsam, eaque, dignissimos dolore nihil veritatis voluptatem iste quibusdam iure neque dicta in enim.</p>
+        <p>Lorem ipsum dolor sit teste amet, consectetur adipisicing elit. Explicabo dolor tenetur nemo, consequatur modi facere quidem ipsam, eaque, dignissimos dolre nihil veritatis voluptatem iste quibusdam iure neque dicta in enim.</p>
     </header>
     <main>
-        <h2>Como deseja Verificar?</h2>
-        <div class="container">
-            <div class="card card1">
-                <form action="" method="post">
-                    <h2>Validar por linha</h2>
-                    <input type="text" name="line" id="line" placeholder="Digite a linha que deseja validar">
-                    <input type="button" id="send" value="Validar" onclick="ValidateLine()">
-                    <div id="responseLabel"></div>
-                </form>
-            </div>
-            <div class="card card2">
-                <form action="" method="post">
-                    <h2>Validar por Arquivo</h2>
+        <form class="card" method="post">
+            <h2>Como deseja Verificar?</h2>
+            <div id="options">
+                <div class="cardOption">
                     <label>Arquivo</label>
-                    <input type="file">
-                    <input type="button" id="send" value="Validar">
-                </form>
+                    <div>
+                        <a href="#validateArq"><label class="cardButton"><i class="bi bi-upload"></i></label></a>
+                        <label class="cardText">Faça o upload de um arquivo Doccob e analíse todas as linhas de uma vez</label>
+                    </div>
+                </div>
+                <div class="cardOption">
+                    <label>Linha</label>
+                    <div>
+                        <a href="#validateLine"><label class="cardButton"><i class="bi bi-card-text"></i></label></a>
+                        <label class="cardText">Insira uma linha inteira do arquivo Doccob para analisar</label>
+                    </div>
+                </div>
             </div>
-        </div>
+        </form>
+        <form action="" class="card" method="post">
+            <h2 id="validateArq">Validar por Arquivo</h2>
+            <div id="getArq">
+                <label for="arquivo" class="cardButton"><i class="bi bi-upload"></i></label>
+                <input type="file" id="arquivo" onchange="Teste()" style="display: none;">
+            </div>
+            <div class="responseLabel" id="responseArqLabel"></div>
+        </form>
+        <form action="" class="card" method="post">
+            <h2 id="validateLine">Validar por linha</h2>
+            <div id="getLine">
+                <input type="text" name="line" id="line" placeholder="Digite a linha que deseja validar">
+                <label id="send" for="btn-send" onclick="ValidateLine()"><i class="bi bi-arrow-right-circle-fill"></i></label>
+                <input type="button" id="btn-send" style="display: none;"></button>
+            </div>
+            <div class="responseLabel" id="responseLabel"></div>
+        </form>
     </main>
 </body>
 </html>

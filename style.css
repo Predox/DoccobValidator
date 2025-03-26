@@ -1,15 +1,22 @@
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body{
-    width: 100vw;
+    width: 99%;
     height: 100vh;
+    overflow-x: hidden;
 }
 
+a{
+    color: black;
+}
+
+/* <-----------------Cabeçalho---------------> */
 header{
-    background: #15ff00;
+    background: #6bca62;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -18,76 +25,181 @@ header{
 }
 
 header h1{
-    background: #0ff;
+    background: rgb(15, 221, 221);
     text-align: center;
     width: 100%;
     font-family: 'Courier New', Courier, monospace;
     font-size: 3em;
-    padding: 10px ;
+    padding: 10px 0;
 }
 
 header p{
     font-family: 'Courier New', Courier, monospace;
     text-align: justify;
-    padding: 20px 20vw 20px 20vw;
+    padding: 20px 20vw;
 }
+
+/* <-----------------Corpo---------------> */
 
 main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background: #f0f;
-    width: 99vw;
-    height: 100vh;
+    background: rgb(189, 70, 189);
+    width: 100vw;
+    height: 3000px;
 }
 
-main>h2{
-    width: 90%;
+#options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10vw;
+}
+
+.cardOption{
+    background: #6bca62;
+    border-radius: 20px;
+    display: flex;
+    margin: 0 0 20px 0 ;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    transition: 0.5s;
+}
+
+.cardOption:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.cardOption *{
+    transition: 0.5s;
+}
+
+.cardOption:hover *{
+    transform: scale(0.95);
+    transition: 0.5s;
+}
+
+.cardOption>label:first-child{
+    font-size: 25px;
+    margin: 10px 0 10px 0;
+}
+
+.cardOption>div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardText{
+    margin: 20px 20px;
     text-align: center;
-    padding: 20px;
+}
+
+#getLine{
+    background: #f5ea55;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#getArq{
+    background: #f5ea55;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
 }
 
 .card{
+    display: flex;
+    flex-direction: column;
     width: 80vw;
     transition: 1s;
+    background: rgb(45, 45, 180);
+    margin: 20px;
+    min-height: 200px;
+    transition: 0;
 }
 
-.card1{
-    background: #00f;
+.card>h2{
     width: 100%;
-    height: calc(100% + 5px);
-
+    text-align: center;
+    padding: 20px 0;
 }
 
-.card1:hover{
-    scale: 1.15;
-    margin: 20px 20px 0 20px;
-    height: calc(100% + 1vh);
-    transition: 0.4s;
-}
-
-.card>form>h2{
-    padding: 20px;
-}
-
-.card>form>input[type='text']{
-    padding-left: 10px;
-    margin: 0 20px 0 20px;
-    width: 250px;
+.card>div>input[type='text']{
+    border: 2px solid #000;
+    padding: 0 10px;
+    width: 70%;
     height: 30px;
     border-radius: 20px;
 }
 
-.card>form>input[type='button']{
-    margin: 0 20px 0 20px;
-    width: 100px;
-    height: 30px;
-    border-radius: 20px;
+
+#send{
+    cursor: pointer;
+    margin: 0 5px;
+    background: transparent;
+    border: 0;
+    font-size: 30px;
+    transition: 0.25s;
 }
 
-form{
 
+
+#send:hover{
+    transition: 0.25s;
+    color: transparent;
+    -webkit-text-stroke-width: 2.3px;
+    -webkit-text-stroke-color: black;
+    transform: scale(1.03);
+}
+
+.cardButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 ;
+    cursor: pointer;
+    background: #00000036;
+    text-align: center;
+    width: 70px;
+    height: 60px;
+    border: 3px solid #000;
+    border-radius: 15px;
+    transition: 0.15s;
+}
+.bi{
+    position: relative;
+    font-size: 1.2em;
+    transition: 0.15s;
+    -webkit-text-stroke-width: 1px;
+}
+
+.cardButton:hover{
+    font-size: 15px;
+    -webkit-text-stroke-width: 1px;
+    color: rgb(45, 45, 180);
+    border: solid transparent;
+    background: #000;
+    transition: 0.15s;
+}
+
+.cardButton:hover>.bi{
+    transition: 0.15s;
+    font-size: 1.8em;
 }
 
 ul>li>label{
@@ -107,22 +219,31 @@ ul>li{
     color: rgb(192, 179, 61);
 }
 
-#responseLabel{
+
+
+.responseLabel{
+    background: #ffffff;
     display: flex;
+    padding: 20px 0;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: 1s;
 }
 
-#responseLabel table{
+.responseLabel table{
     border-spacing: 5px;
 }
+.responseLabel table:first-child{
+    margin-top: 20px;
+}
 
-#responseLabel table, tr td:not(#responseLabel table tr td:first-child){
+.responseLabel table, tr td:not(.responseLabel table tr td:first-child){
     text-align: start;
 }
 
-#responseLabel table tr td {
+.responseLabel table tr td {
     color: rgb(238, 0, 0);
     text-align: end;
     width: 50%;
@@ -130,6 +251,8 @@ ul>li{
 
 i .alert{
     background: #fff;
+    text-align: center;
+    width: 150px;
     border: 2px solid #f5ea55;
     border-radius: 10px;
     padding: 2px;
@@ -141,7 +264,7 @@ i .alert{
     transition: 0.3s;
 }
 
-#responseLabel table, tr td:not(#responseLabel table tr td:first-child):hover .problem:last-child i .alert{
+.responseLabel table, tr td:not(.responseLabel table tr td:first-child):hover .problem:last-child i .alert{
     transform: translateX(-5px) translateY(-20px);
     visibility: visible;
     opacity: 80%;
