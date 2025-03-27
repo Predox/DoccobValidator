@@ -1,6 +1,6 @@
 function SetLength(linha,response){
 
-            response = response.concat("</table><br><table><tr><td><label>TAMANHO LINHA:</label></td><td> " + linha.length + "</td></tr></table>")
+            response = response.concat("</table><br><table><tr><td><label>TAMANHO LINHA:</label></td><td> " + linha.length + "</td></tr></table></div>")
 
         return response
 }
@@ -43,7 +43,7 @@ function Ooo(linha, type){
         var horario = [linha.slice(79,81),linha.slice(81,83)]
         var idInter = linha.slice(83,95)
         var response = (
-            "<table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,0,0) +
+            "<div class='containerTable'><table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,0,0) +
             "</td></tr>\n<tr><td><label>IDENTIFICAÇÃO DO REMETENTE:</label></td><td> " + ValidateEmptySpace(idRem,0,1) +
             "</td></tr>\n<tr><td><label>IDENTIFICAÇÃO DO DESTINATÁRIO:</label></td><td> " + ValidateEmptySpace(idDes,0,2) +
             "</td></tr>\n<tr><td><label>DATA:</label></td><td> " + ValidateEmptySpace(data[0],0,3) + "/" + ValidateEmptySpace(data[1],0,4) + "/" + ValidateEmptySpace(data[2],0,5) +
@@ -59,7 +59,7 @@ function Cccl(linha, type){
         var idReg = linha.slice(0,3)
         var idRem = linha.slice(3,17)
         var response = (
-            "<table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,1,0) +
+            "<div class='containerTable'><table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,1,0) +
             "</td></tr>\n<tr><td><label>IDENTIFICAÇÃO DO REMETENTE:</label></td><td> " + ValidateEmptySpace(idRem,1,1)
         )  
         var filler = linha.slice(17,169)
@@ -71,7 +71,7 @@ function Cccli(linha, type){
         var idReg = linha.slice(0,3)
         var cgm = linha.slice(3,17)
         var razSoc = linha.slice(17,57)
-        var response = ("<table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,2,0) +
+        var response = ("<div class='containerTable'><table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,2,0) +
                 "</td></tr>\n<tr><td><label>C.G.C.:</label></td><td> " + ValidateEmptySpace(cgm,2,1) +
                 "</td></tr>\n<tr><td><label>RAZÃO SOCIAL:</label></td><td> " + ValidateEmptySpace(razSoc,2,2)
         )  
@@ -100,7 +100,7 @@ function Ccclii(linha, type){
         var numConCor = linha.slice(154,164)
         var digVerConCor = linha.slice(164,166)
         var acaoDoc = linha.slice(166,167)
-        var response = ("<table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,3,0) +
+        var response = ("<div class='containerTable'><table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,3,0) +
                 "</td></tr>\n<tr><td><label>FILIAL EMISSORA DO DOCUMENTO:</label></td><td> " + ValidateEmptySpace(filEmiDoc,3,1) +
                 "</td></tr>\n<tr><td><label>TIPO DO DOCUMENTO DE COBRANÇA:</label></td><td> " + ValidateEmptySpace(tipDocCob,3,2) +
                 "</td></tr>\n<tr><td><label>SÉRIE DO DOCUMENTO DE COBRANÇA:</label></td><td> " + ValidateEmptySpace(serDocCob,3,3) +
@@ -130,7 +130,7 @@ function Cccliii(linha, type){
         var filEmiDoc = linha.slice(3,13)
         var serCon = linha.slice(13,18)
         var numCon = linha.slice(18,30)
-        var response = ("<table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,4,0) +
+        var response = ("<div class='containerTable'><table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,4,0) +
                 "</td></tr>\n<tr><td><label>FILIAL EMISSORA DO DOCUMENTO:</label></td><td> " + ValidateEmptySpace(filEmiDoc,4,1) +
                 "</td></tr>\n<tr><td><label>SÉRIE DO CONHECIMENTO:</label></td><td> " + ValidateEmptySpace(serCon,4,2) +
                 "</td></tr>\n<tr><td><label>NÚMERO DO CONHECIMENTO:</label></td><td> " + ValidateEmptySpace(numCon,4,3)
@@ -149,7 +149,7 @@ function Cccliv(linha, type){
         var pesNF = [linha.slice(22,27),linha.slice(27,29)]
         var valMerNF = [linha.slice(29,42),linha.slice(42,44)]
         var cgcEmiNF = linha.slice(44,58)
-        var response = ("<table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,5,0) +
+        var response = ("<div class='containerTable'><table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,5,0) +
                 "</td></tr>\n<tr><td><label>SÉRIE:</label></td><td> " + ValidateEmptySpace(serie,5,1) +
                 "</td></tr>\n<tr><td><label>NÚMERO DA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(numNF,5,2) +
                 "</td></tr>\n<tr><td><label>DATA DE EMISSÃO DA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(dataEmiNF[0],5,3) + "/" + ValidateEmptySpace(dataEmiNF[0],5,4) + "/" + ValidateEmptySpace(dataEmiNF[0],5,5) +
@@ -167,7 +167,7 @@ function Ccclv(linha, type){
         var idReg = linha.slice(0,3)
         var qTotDocCob = linha.slice(3,7)
         var vTotDocCob = [linha.slice(7,20),linha.slice(20,22)]
-        var response = ("<table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,6,0) +
+        var response = ("<div class='containerTable'><table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,6,0) +
                 "</td></tr>\n<tr><td><label>QTDE. TOTAL DOCTOS. DE COBRANÇA:</label></td><td> " + ValidateEmptySpace(qTotDocCob,6,1) +
                 "</td></tr>\n<tr><td><label>VALOR TOTAL DOCTOS. DE COBRANÇA:</label></td><td> " + ValidateEmptySpace(vTotDocCob[0],6,2).replace(/^0+/,"") + "," + ValidateEmptySpace(vTotDocCob[1],6,3) + " <label class='mini'>(" + vTotDocCob[0] + "," + vTotDocCob[1] + ")</label>"
         )  

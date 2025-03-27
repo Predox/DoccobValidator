@@ -1,11 +1,12 @@
-function ValidateLine(linha, type="line"){
+function ValidateLine(linha){
+    var type = "line"
     var linha = document.getElementById("line").value
     Validate(linha, type)
 }
 
 function Validate(linha, type){
-    if(type == "arq") type = "#responseArqLabel"
-    if(type == "line") type = "#responseLabel"
+    if(type == "arq") type = "responseArqLabel"
+    if(type == "line") type = "responseLineLabel"
     var inicio = linha.slice(0,3)
     switch(inicio){
         case "000":
@@ -64,7 +65,8 @@ function LerArquivo() {
     }
 }
 
-function ValidateArq(arq, type="arq"){
+function ValidateArq(arq){
+    var type = "arq"
     arq.forEach(element => {
         Validate(element, type)
     });

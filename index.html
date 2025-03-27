@@ -44,7 +44,7 @@
                 <label for="arquivo" class="cardButton"><i class="bi bi-upload"></i></label>
                 <input type="file" id="arquivo" onchange="LerArquivo()" style="display: none;">
             </div>
-            <div class="responseLabel" id="responseArqLabel"></div>
+            <label class="responseLabel" id="responseArqLabel"></label>
         </form>
         <form action="" class="card" method="post">
             <h2 id="validateLine">Validar por linha</h2>
@@ -53,7 +53,7 @@
                 <label id="send" for="btn-send" onclick="ValidateLine()"><i class="bi bi-arrow-right-circle-fill"></i></label>
                 <input type="button" id="btn-send" style="display: none;"></button>
             </div>
-            <div class="responseLabel" id="responseLabel"></div>
+            <label class="responseLabel" id="responseLineLabel"></label>
         </form>
     </main>
 </body>
