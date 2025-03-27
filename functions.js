@@ -52,7 +52,7 @@ function Ooo(linha){
         )  
         var filler = linha.slice(95,169)
         response = SetLength(linha,response)   
-        document.getElementById("responseLabel").innerHTML = response
+        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
 }
 
 function Cccl(linha){
@@ -64,7 +64,7 @@ function Cccl(linha){
         )  
         var filler = linha.slice(17,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = response
+        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
 }
 
 function Cccli(linha){
@@ -77,7 +77,7 @@ function Cccli(linha){
         )  
         var filler = linha.slice(57,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = response
+        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
 }
 
 function Ccclii(linha){
@@ -122,7 +122,7 @@ function Ccclii(linha){
         )  
         var filler = linha.slice(167,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = response
+        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
 }
 
 function Cccliii(linha){
@@ -137,7 +137,7 @@ function Cccliii(linha){
         )  
         var filler = linha.slice(30,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = response
+        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
 }
 
 function Cccliv(linha){
@@ -159,7 +159,7 @@ function Cccliv(linha){
         )  
         filler = linha.slice(58,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = response
+        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
 }
 
 function Ccclv(linha){
@@ -173,7 +173,7 @@ function Ccclv(linha){
         )  
         var filler = linha.slice(30,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = response
+        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
 }
 
 function Empty(){

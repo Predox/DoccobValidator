@@ -8,7 +8,7 @@
     <script src="script.js"></script>
     <script>
 
-        function ler() {
+        function LerArquivo() {
             const content = document.querySelector(".exibir");
             const [file] = document.querySelector("input[type=file]").files;
             const leitura = new FileReader();
@@ -22,9 +22,10 @@
                 // Exibe as linhas no elemento com a classe 'exibir'
                 content.innerHTML = a.join('<br>');
                 
+                ValidateArq(a)
                 // Agora você pode acessar a.length dentro do evento
-                var b = a.length; // Correção aqui: uso correto de 'length'
-                console.log(b);  // Exibe o tamanho do array no console
+                // var b = a.length; // Correção aqui: uso correto de 'length'
+                // console.log(b);  // Exibe o tamanho do array no console
             }, false);
 
             // Verifica se o arquivo foi selecionado
@@ -37,6 +38,8 @@
 <body>
     <input type="file" id="arq" onchange="ler()">
     <input type="button" value="Executar" onclick="ler()">
-    <br><p id = "exibir" class="exibir" name = "exibir"></p>
+    <label id="armazenar" style="display: flex;"></label>
+    <br>
+    <label id="responseLabel" class="exibir" name = "exibir"></label>
 </body>
 </html>
