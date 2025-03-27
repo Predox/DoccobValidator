@@ -1,37 +1,39 @@
-function ValidateLine(linha){
+function ValidateLine(linha, type="line"){
     var linha = document.getElementById("line").value
-    Validate(linha)
+    Validate(linha, type)
 }
 
-function Validate(linha){
+function Validate(linha, type){
+    if(type == "arq") type = "#responseArqLabel"
+    if(type == "line") type = "#responseLabel"
     var inicio = linha.slice(0,3)
     switch(inicio){
         case "000":
-            Ooo(linha)
+            Ooo(linha, type)
         break
 
         case "350":
-            Cccl(linha)
+            Cccl(linha, type)
         break
     
         case "351":
-            Cccli(linha)
+            Cccli(linha, type)
         break
 
         case "352":
-            Ccclii(linha)
+            Ccclii(linha, type)
         break
 
         case "353":
-            Cccliii(linha)
+            Cccliii(linha, type)
         break
 
         case "354":
-            Cccliv(linha)
+            Cccliv(linha, type)
         break
 
         case "355":
-            Ccclv(linha)
+            Ccclv(linha, type)
         break
 
         case "":
@@ -41,7 +43,7 @@ function Validate(linha){
 }
 
 function LerArquivo() {
-    const content = document.querySelector(".exibir");
+    const content = document.querySelector("#responseArqLabel");
     const [file] = document.querySelector("input[type=file]").files;
     const leitura = new FileReader();
 
@@ -49,11 +51,7 @@ function LerArquivo() {
         // O conteúdo do arquivo é lido como string
         // Dividimos o conteúdo por linhas, criando um array
         const a = leitura.result.split('\r\n'); // Correção aqui: 'a' dentro do escopo do evento
-        console.log(a);
-        
-        // Exibe as linhas no elemento com a classe 'exibir'
-        content.innerHTML = a.join('<br>');
-        
+
         ValidateArq(a)
         // Agora você pode acessar a.length dentro do evento
         // var b = a.length; // Correção aqui: uso correto de 'length'
@@ -66,9 +64,9 @@ function LerArquivo() {
     }
 }
 
-function ValidateArq(arq){
+function ValidateArq(arq, type="arq"){
     arq.forEach(element => {
-        Validate(element)
+        Validate(element, type)
     });
 }
 

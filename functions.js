@@ -35,7 +35,7 @@ function ValidateEmptySpace(analise,id,idNumber,responseValidate = "vazio"){
 
 }
 
-function Ooo(linha){
+function Ooo(linha, type){
         var idReg = linha.slice(0,3)
         var idRem = linha.slice(3,38)
         var idDes = linha.slice(38,73)
@@ -52,10 +52,10 @@ function Ooo(linha){
         )  
         var filler = linha.slice(95,169)
         response = SetLength(linha,response)   
-        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
+        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
 }
 
-function Cccl(linha){
+function Cccl(linha, type){
         var idReg = linha.slice(0,3)
         var idRem = linha.slice(3,17)
         var response = (
@@ -64,10 +64,10 @@ function Cccl(linha){
         )  
         var filler = linha.slice(17,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
+        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
 }
 
-function Cccli(linha){
+function Cccli(linha, type){
         var idReg = linha.slice(0,3)
         var cgm = linha.slice(3,17)
         var razSoc = linha.slice(17,57)
@@ -77,10 +77,10 @@ function Cccli(linha){
         )  
         var filler = linha.slice(57,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
+        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
 }
 
-function Ccclii(linha){
+function Ccclii(linha, type){
         var idReg = linha.slice(0,3)
         var filEmiDoc = linha.slice(3,13)
         var tipDocCob = linha.slice(13,14)
@@ -122,10 +122,10 @@ function Ccclii(linha){
         )  
         var filler = linha.slice(167,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
+        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
 }
 
-function Cccliii(linha){
+function Cccliii(linha, type){
         var idReg = linha.slice(0,3)
         var filEmiDoc = linha.slice(3,13)
         var serCon = linha.slice(13,18)
@@ -137,10 +137,10 @@ function Cccliii(linha){
         )  
         var filler = linha.slice(30,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
+        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
 }
 
-function Cccliv(linha){
+function Cccliv(linha, type){
         const status = [1,0,1,1,1,1,1,1,1,1,0,0]// 1 = M --- 0 = C
         var idReg = linha.slice(0,3)
         var serie = linha.slice(3,6)
@@ -159,10 +159,10 @@ function Cccliv(linha){
         )  
         filler = linha.slice(58,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
+        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
 }
 
-function Ccclv(linha){
+function Ccclv(linha, type){
         const status = [1,1,1,1,0]// 1 = M --- 0 = C
         var idReg = linha.slice(0,3)
         var qTotDocCob = linha.slice(3,7)
@@ -173,9 +173,9 @@ function Ccclv(linha){
         )  
         var filler = linha.slice(30,169)
         response = SetLength(linha,response)
-        document.getElementById("responseLabel").innerHTML = document.getElementById("responseLabel").innerHTML + response
+        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
 }
 
 function Empty(){
-    document.getElementById("responseLabel").innerHTML = ""
+    document.getElementById(type).innerHTML = ""
 }
