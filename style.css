@@ -47,7 +47,7 @@ main{
     align-items: center;
     background: rgb(189, 70, 189);
     width: 100vw;
-    height: 3000px;
+    min-height: 100vh;
 }
 
 #options{

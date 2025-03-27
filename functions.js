@@ -52,7 +52,12 @@ function Ooo(linha, type){
         )  
         var filler = linha.slice(95,169)
         response = SetLength(linha,response)   
-        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        if( type == "responseArqLabel"){
+                document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        }
+        if( type == "responseLineLabel"){
+                document.getElementById(type).innerHTML = response
+        }
 }
 
 function Cccl(linha, type){
@@ -77,7 +82,12 @@ function Cccli(linha, type){
         )  
         var filler = linha.slice(57,169)
         response = SetLength(linha,response)
-        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        if( type == "responseArqLabel"){
+                document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        }
+        if( type == "responseLineLabel"){
+                document.getElementById(type).innerHTML = response
+        }
 }
 
 function Ccclii(linha, type){
@@ -122,7 +132,12 @@ function Ccclii(linha, type){
         )  
         var filler = linha.slice(167,169)
         response = SetLength(linha,response)
-        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        if( type == "responseArqLabel"){
+                document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        }
+        if( type == "responseLineLabel"){
+                document.getElementById(type).innerHTML = response
+        }
 }
 
 function Cccliii(linha, type){
@@ -137,7 +152,12 @@ function Cccliii(linha, type){
         )  
         var filler = linha.slice(30,169)
         response = SetLength(linha,response)
-        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        if( type == "responseArqLabel"){
+                document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        }
+        if( type == "responseLineLabel"){
+                document.getElementById(type).innerHTML = response
+        }
 }
 
 function Cccliv(linha, type){
@@ -159,7 +179,12 @@ function Cccliv(linha, type){
         )  
         filler = linha.slice(58,169)
         response = SetLength(linha,response)
-        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        if( type == "responseArqLabel"){
+                document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        }
+        if( type == "responseLineLabel"){
+                document.getElementById(type).innerHTML = response
+        }
 }
 
 function Ccclv(linha, type){
@@ -173,9 +198,14 @@ function Ccclv(linha, type){
         )  
         var filler = linha.slice(30,169)
         response = SetLength(linha,response)
-        document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        if( type == "responseArqLabel"){
+                document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
+        }
+        if( type == "responseLineLabel"){
+                document.getElementById(type).innerHTML = response
+        }
 }
 
-function Empty(){
-    document.getElementById(type).innerHTML = ""
+function Empty(type){
+    document.getElementById("responseLineLabel").innerHTML = ""
 }
