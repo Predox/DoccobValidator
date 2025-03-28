@@ -1,7 +1,16 @@
+:root{
+    --primary-color: #4E008E;
+    --second-color: #3E0072;
+    --third-color: #FF4C09;
+    --fourth-color: #F2F2F2;
+    --fifth-color: #0D0D0D;
+}
+
 *{
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -11,12 +20,12 @@ body{
 }
 
 a{
-    color: black;
+    color: var(--primary-color);
 }
 
 /* <-----------------Cabeçalho---------------> */
 header{
-    background: #6bca62;
+    background: var(--second-color);
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -25,16 +34,14 @@ header{
 }
 
 header h1{
-    background: rgb(15, 221, 221);
+    background: var(--fourth-color);
     text-align: center;
     width: 100%;
-    font-family: 'Courier New', Courier, monospace;
     font-size: 3em;
     padding: 10px 0;
 }
 
 header p{
-    font-family: 'Courier New', Courier, monospace;
     text-align: justify;
     padding: 20px 20vw;
 }
@@ -42,10 +49,10 @@ header p{
 /* <-----------------Corpo---------------> */
 
 main{
+    background: var(--fourth-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(189, 70, 189);
     width: 100vw;
     min-height: 100vh;
 }
@@ -60,7 +67,7 @@ main{
 }
 
 .cardOption{
-    background: #6bca62;
+    background: var(--fourth-color);
     border-radius: 20px;
     display: flex;
     margin: 0 0 20px 0 ;
@@ -106,7 +113,7 @@ main{
 }
 
 #getLine{
-    background: #f5ea55;
+    background: var(--fourth-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,7 +121,7 @@ main{
 }
 
 #getArq{
-    background: #f5ea55;
+    background: var(--fourth-color);
     display: flex;
     width: 100%;
     justify-content: center;
@@ -123,20 +130,31 @@ main{
 }
 
 .card{
+    background: var(--forth-color);
     display: flex;
     flex-direction: column;
     width: 80vw;
     transition: 1s;
-    background: rgb(45, 45, 180);
     margin: 20px;
     min-height: 200px;
     transition: 0;
 }
+.card:first-child{
+    background: var(--primary-color);
+    width: 100vw;
+    min-height: 420px;
+}
 
 .card>h2{
+    background: var(--primary-color);
+    border-radius: 20px;
     width: 100%;
     text-align: center;
-    padding: 20px 0;
+    padding: 35px 0;
+}
+
+.card:first-child>h2{
+    padding: 35px 0 50px 0;
 }
 
 .card>div>input[type='text']{
@@ -173,11 +191,11 @@ main{
     align-items: center;
     margin: 0 ;
     cursor: pointer;
-    background: #00000036;
+    color: var(--primary-color);
     text-align: center;
     width: 70px;
     height: 60px;
-    border: 3px solid #000;
+    border: 3px solid var(--second-color);
     border-radius: 15px;
     transition: 0.15s;
 }
@@ -191,9 +209,9 @@ main{
 .cardButton:hover{
     font-size: 15px;
     -webkit-text-stroke-width: 1px;
-    color: rgb(45, 45, 180);
+    color: var(--fourth-color);
     border: solid transparent;
-    background: #000;
+    background: var(--primary-color);
     transition: 0.15s;
 }
 
@@ -220,16 +238,19 @@ ul>li{
 }
 
 .containerTable{
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 20px;
     margin-bottom: 20px;
-    min-width: 10%;
+    min-width: 90%;
+    min-height: 300px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .responseLabel{
-    background: #ffffff;
+    background: var(--fourth-color);
     display: flex;
     padding: 20px 0;
     height: 100%;
@@ -241,6 +262,7 @@ ul>li{
 
 .responseLabel table{
     border-spacing: 5px;
+    border: 2px solid #000;
 }
 .responseLabel table:first-child{
     margin-top: 20px;
@@ -272,7 +294,6 @@ i .alert{
 }
 
 .responseLabel table, tr td:not(.responseLabel table tr td:first-child):hover .problem:last-child i .alert{
-    transform: translateX(-5px) translateY(-20px);
     visibility: visible;
     opacity: 80%;
     transition: 0.3s;

@@ -1,6 +1,6 @@
 function SetLength(linha,response){
 
-            response = response.concat("</table><br><table><tr><td><label>TAMANHO LINHA:</label></td><td> " + linha.length + "</td></tr></table></div>")
+            response = response.concat("<tr><td> </td><td </td></tr><tr><td><label>TAMANHO LINHA:</label></td><td> " + linha.length + "</td></tr></table></div>")
 
         return response
 }
