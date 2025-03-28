@@ -319,10 +319,21 @@ ul>li{
 .responseLabel table tr:nth-last-child(-n+3) td {
     color: var(--second-color);
     border-bottom: transparent;
+}
 
+.responseLabel table tr:first-child td {
+    font-size: 2em;
+    color: var(--second-color);
+    width: 50%;
+    border-bottom: transparent;
+    font-weight: 600;
 }
 
 .responseLabel table tr:last-child td:last-child {
+    color: var(--third-color);
+}
+
+.responseLabel table tr:first-child td:last-child {
     color: var(--third-color);
 }
 
