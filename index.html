@@ -15,8 +15,8 @@
 </head>
 <body>
     <header>
-        <h1>Doccob Validator</h1>
-        <p>Lorem ipsum dolor sit teste amet, consectetur adipisicing elit. Explicabo dolor tenetur nemo, consequatur modi facere quidem ipsam, eaque, dignissimos dolre nihil veritatis voluptatem iste quibusdam iure neaaaaaaaaaaaaaaaaaaaaaaaaaaque dicta in enim.</p>
+        <div id="title"><h1>Doccob</h1><h2>VALIDATOR</h2></div>
+        <p>O Doccob Validator é uma ferramenta desenvolvida para analisar e validar arquivos no formato Guia do Doccob Proceda 3.0. Ele verifica a conformidade do arquivo com as especificações exigidas, garantindo que os dados estejam estruturados corretamente e sem erros que possam comprometer o processamento. O validador analisa campos obrigatórios, formatação de informações, regras de negócio e possíveis inconsistências, auxiliando na identificação e correção de problemas antes do envio aos sistemas que utilizam esse padrão.</p>
     </header>
     <main>
         <form class="card" method="post">
@@ -50,7 +50,7 @@
             <h2 id="validateLine">Validar por linha</h2>
             <div id="getLine">
                 <input type="text" name="line" id="line" placeholder="Digite a linha que deseja validar">
-                <label id="send" for="btn-send" onclick="ValidateLine()"><i class="bi bi-arrow-right-circle-fill"></i></label>
+                <label id="send" for="btn-send" onclick="ValidateLine()"><i class="bi bi-arrow-left-circle"></i></label>
                 <input type="button" id="btn-send" style="display: none;"></button>
             </div>
             <label class="responseLabel" id="responseLineLabel"></label>

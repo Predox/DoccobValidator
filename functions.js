@@ -1,6 +1,6 @@
 function SetLength(linha,response){
 
-            response = response.concat("<tr><td> </td><td </td></tr><tr><td><label>TAMANHO LINHA:</label></td><td> " + linha.length + "</td></tr></table></div>")
+            response = response.concat("<tr><td> </td><td> </td></tr><tr><td><label>TAMANHO LINHA:</label></td><td> " + linha.length + "</td></tr></table></div>")
 
         return response
 }
@@ -206,6 +206,10 @@ function Ccclv(linha, type){
         }
 }
 
-function Empty(type){
+function Empty(){
     document.getElementById("responseLineLabel").innerHTML = ""
 }
+
+function EmptyArq(){
+        document.getElementById("responseArqLabel").innerHTML = ""
+    }

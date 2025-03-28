@@ -67,6 +67,7 @@ function LerArquivo() {
 
 function ValidateArq(arq){
     var type = "arq"
+    EmptyArq()
     arq.forEach(element => {
         Validate(element, type)
     });

@@ -1,0 +1,1 @@
+- Sistema de busca de palavra ou numero, com distição de palavra ou conjunto dentro dentro da palavra, tipo o do VSCode
