@@ -155,7 +155,8 @@ main{
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 20px;
+    transition: 1s;
 }
 
 .card{
@@ -174,6 +175,11 @@ main{
     min-height: 420px;
 }
 
+#getArq>.cardButton{
+    width: 150px;
+    height: 35px;
+}
+
 .card>h2{
     background: var(--primary-color);
     color: var(--fourth-color);
@@ -183,10 +189,100 @@ main{
     width: 100%;
     text-align: center;
     padding: 35px 0;
+    z-index: 2;
 }
 
 .card:first-child>h2{
     padding: 35px 0 40px 0;
+}
+
+.busca{
+    background: var(--primary-color);
+    margin-top: 70px;
+    position: absolute;
+    align-self: flex-end;
+    width: 340px;
+    height: 60px;
+    display: none;
+    padding: 10px 5px;
+    align-items: end;
+    justify-content: space-around;
+    color: var(--second-color);
+    border-radius: 20px;
+    transition: 1s ease-out;
+    transform: translateY(-50px);
+    z-index: 1;
+}
+
+
+.barraBusca{
+    background: var(--fourth-color);
+    display: flex;
+    padding: 0 5px 0 5px;
+    justify-content: space-around;
+    align-items: center;
+    width: 230px;
+    height: 35px;
+    border-radius: 30px;
+}
+.barraBusca label{
+    text-align: center;
+    transition: 0.2s;
+    font-size: 20px;
+    -webkit-text-stroke-width: 1px;
+}
+.barraBusca label:hover{
+   color: var(--third-color);
+   transition: 0.2s;
+   transform: scale(1.02);
+}
+.barraBusca #upArrow{
+   transform: rotate(90deg);
+}
+.barraBusca #downArrow{
+   transform: rotate(-90deg);
+}
+.inputBusca{
+    background: transparent;
+    padding: 6px 0;
+    border: none;
+}
+.inputBusca:focus{
+    background: transparent;
+    border: 0 none;
+    outline: 0;
+}
+.barraBusca>label:hover{
+   color: var(--third-color);
+   transition: 0.2s;
+   transform: scale(1.02);
+}
+
+.busca>.bi{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke-width: 0;
+    background: var(--fourth-color);
+    transition: 0.2s;
+
+}
+
+.busca>.bi:hover{
+    transition: 0.2s;
+    color: var(--third-color);
+}
+
+.biPressed{
+    transition: 0.2s;
+    transform: scale(0.98);
+    color: var(--third-color);
+    box-sizing: border-box;
+    background: var(--second-color) !important;
+    border: 3px solid var(--third-color);
 }
 
 .card>div>input[type='text']{
@@ -231,7 +327,7 @@ main{
     border-radius: 15px;
     transition: 0.15s;
 }
-.bi{
+.cardButton>.bi{
     position: relative;
     font-size: 1.2em;
     transition: 0.15s;

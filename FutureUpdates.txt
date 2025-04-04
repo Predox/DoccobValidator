@@ -1,1 +1,11 @@
-- Sistema de busca de palavra ou numero, com distição de palavra ou conjunto dentro dentro da palavra, tipo o do VSCode
+- Sistema de busca de palavra ou numero, com distição de palavra ou conjunto dentro dentro da palavra, tipo o do VSCode;
+    - [Design] Dentro do label criar um botão com a seta pra cima e pra baixo, se ao clicar não haver nada igual a pesquisa então deve mostrar um alert personalizado dizendo que nada foi encontrado
+    - [Design] fora do label ter dois botões:
+        - Procurar como palavra inteira;
+        - Botão que deixa a pesquisa sensitiva entre Maiuscula e minuscula;
+- [Design] Validação do formato de data e hora;
+- Melhorar a parte de Obrigatóriedade;
+- Adicionar uma opção de visualização em grid diminuindo a fonte
+- Ao fazer as validações cada tipo de erro deve constar como uma cor do triangulo
+- No meio do lado esquerdo da pagina conter um pop up que ao passar o mouse mostra a legenda referente a cada um dos erros que só aparece quando algo foi validado já
+

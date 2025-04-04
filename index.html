@@ -40,6 +40,15 @@
         </form>
         <form action="" class="card" method="post">
             <h2 id="validateArq">Validar por Arquivo</h2>
+            <div class="busca" id="buscaArq">
+                <div class="barraBusca">
+                    <input type="text" class="inputBusca">
+                    <label for="" id="upArrow"><i class="bi bi-arrow-left-circle"></i></label>
+                    <label for="" id="downArrow"><i class="bi bi-arrow-left-circle"></i></label>
+                </div>
+                <i class="bi bi-type" id="differAa" onclick="differAa()"></i>
+                <i class="bi bi-braces-asterisk" id="searchWholeWord" onclick="searchWholeWord()"></i>
+            </div>
             <div id="getArq">
                 <label for="arquivo" class="cardButton"><i class="bi bi-upload"></i></label>
                 <input type="file" id="arquivo" onchange="LerArquivo()" style="display: none;">

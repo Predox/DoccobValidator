@@ -65,12 +65,31 @@ function LerArquivo() {
     }
 }
 
-function ValidateArq(arq){
+async function ValidateArq(arq){
+    var button = document.getElementById('getArq');
+    var barraBusca = document.getElementById('buscaArq');
     var type = "arq"
     EmptyArq()
     arq.forEach(element => {
         Validate(element, type)
     });
+
+    button.style.justifyContent = 'start'
+    barraBusca.style.display = 'flex'
+    await sleep(200)
+    barraBusca.style.transform = 'translateY(10px)'
 }
 
+function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
 
+function differAa(){
+    var elemento = document.getElementById('differAa')
+    elemento.classList.toggle('biPressed')
+}
+
+function searchWholeWord(){
+    var elemento = document.getElementById('searchWholeWord')
+    elemento.classList.toggle('biPressed')
+}
