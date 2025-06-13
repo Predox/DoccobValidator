@@ -172,7 +172,7 @@ function Cccliv(linha, type){
         var response = ("<div class='containerTable'><table><tr><td><label>IDENTIFICADOR DE REGISTRO:</label></td><td> " + ValidateEmptySpace(idReg,5,0) +
                 "</td></tr>\n<tr><td><label>SÉRIE:</label></td><td> " + ValidateEmptySpace(serie,5,1) +
                 "</td></tr>\n<tr><td><label>NÚMERO DA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(numNF,5,2) +
-                "</td></tr>\n<tr><td><label>DATA DE EMISSÃO DA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(dataEmiNF[0],5,3) + "/" + ValidateEmptySpace(dataEmiNF[0],5,4) + "/" + ValidateEmptySpace(dataEmiNF[0],5,5) +
+                "</td></tr>\n<tr><td><label>DATA DE EMISSÃO DA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(dataEmiNF[0],5,3) + "/" + ValidateEmptySpace(dataEmiNF[1],5,4) + "/" + ValidateEmptySpace(dataEmiNF[2],5,5) +
                 "</td></tr>\n<tr><td><label>PESO DA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(pesNF[0],5,6).replace(/^0+/,"") + "," + ValidateEmptySpace(pesNF[1],5,7) + " <label class='mini'>(" + pesNF[0] + "," + pesNF[1] + ")</label>" +
                 "</td></tr>\n<tr><td><label>VALOR DA MERCADORIA NA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(valMerNF[0],5,8).replace(/^0+/,"") + "," + ValidateEmptySpace(valMerNF[1],5,9) + " <label class='mini'>(" + valMerNF[0] + "," + valMerNF[1] + ")</label>" +
                 "</td></tr>\n<tr><td><label>CGC DO EMISSOR DA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(cgcEmiNF,5,10)
