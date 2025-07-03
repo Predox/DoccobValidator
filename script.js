@@ -51,7 +51,7 @@ function LerArquivo() {
     leitura.addEventListener("load", () => {
         // O conteúdo do arquivo é lido como string
         // Dividimos o conteúdo por linhas, criando um array
-        const a = leitura.result.split('\r\n'); // Correção aqui: 'a' dentro do escopo do evento
+        const a = leitura.result.split(/\r?\n/); // Correção aqui: 'a' dentro do escopo do evento
 
         ValidateArq(a)
         // Agora você pode acessar a.length dentro do evento
