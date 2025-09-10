@@ -1,40 +1,40 @@
 function ValidateLine(linha){
     var type = "line"
     var linha = document.getElementById("line").value
-    Validate(linha, type)
+    Validate(linha, type, 1)
 }
 
-function Validate(linha, type){
+function Validate(linha, type, lineNumber){
     if(type == "arq") type = "responseArqLabel"
     if(type == "line") type = "responseLineLabel"
     var inicio = linha.slice(0,3)
     switch(inicio){
         case "000":
-            Ooo(linha, type)
+            Ooo(linha, type, lineNumber)
         break
 
         case "350":
-            Cccl(linha, type)
+            Cccl(linha, type, lineNumber)
         break
     
         case "351":
-            Cccli(linha, type)
+            Cccli(linha, type, lineNumber)
         break
 
         case "352":
-            Ccclii(linha, type)
+            Ccclii(linha, type, lineNumber)
         break
 
         case "353":
-            Cccliii(linha, type)
+            Cccliii(linha, type, lineNumber)
         break
 
         case "354":
-            Cccliv(linha, type)
+            Cccliv(linha, type, lineNumber)
         break
 
         case "355":
-            Ccclv(linha, type)
+            Ccclv(linha, type, lineNumber)
         break
 
         case "":
@@ -70,8 +70,9 @@ async function ValidateArq(arq){
     var barraBusca = document.getElementById('buscaArq');
     var type = "arq"
     EmptyArq()
-    arq.forEach(element => {
-        Validate(element, type)
+    arq.forEach((element, idx) => {
+         const lineNumber = idx + 1;
+        Validate(element, type, lineNumber);
     });
 
     button.style.justifyContent = 'start'

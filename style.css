@@ -97,7 +97,7 @@ main{
     display: flex;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    margin: 0 0 20px 0 ;
+    margin: 20px 0 20px 0 ;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -152,11 +152,12 @@ main{
 #getArq{
     background: var(--fourth-color);
     display: flex;
-    width: 100%;
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
     transition: 1s;
+    position: absolute;
+    margin-top: 105px;
 }
 
 .card{
@@ -198,10 +199,9 @@ main{
 
 .busca{
     background: var(--primary-color);
-    margin-top: 70px;
-    position: absolute;
     align-self: flex-end;
-    width: 340px;
+    margin-top: -35px;
+    width: 370px;
     height: 60px;
     display: none;
     padding: 10px 5px;
@@ -210,10 +210,28 @@ main{
     color: var(--second-color);
     border-radius: 20px;
     transition: 1s ease-out;
-    transform: translateY(-50px);
-    z-index: 1;
+    position: sticky !important;
+    top: -25px;
+    z-index: 1000;
+    transform: none !important;
 }
-
+.search-counter{
+    font-weight: 700;
+    font-size: .9rem;
+    color: var(--second-color);
+    margin: 0 .2rem;
+    min-width: 25px;
+    z-index: 1;
+    text-align: right;
+}
+.searchControls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 5px;
+    left: -25px;
+}
 
 .barraBusca{
     background: var(--fourth-color);
@@ -236,16 +254,14 @@ main{
    transition: 0.2s;
    transform: scale(1.02);
 }
-.barraBusca #upArrow{
-   transform: rotate(90deg);
-}
-.barraBusca #downArrow{
-   transform: rotate(-90deg);
-}
+
 .inputBusca{
     background: transparent;
-    padding: 6px 0;
+    padding: 8px 0;
     border: none;
+    margin: 0 5px 0 5px;
+    max-width: 135px;
+    z-index: 2;
 }
 .inputBusca:focus{
     background: transparent;
@@ -276,14 +292,17 @@ main{
     color: var(--third-color);
 }
 
-.biPressed{
-    transition: 0.2s;
-    transform: scale(0.98);
-    color: var(--third-color);
-    box-sizing: border-box;
-    background: var(--second-color) !important;
-    border: 3px solid var(--third-color);
+#differAa.biPressed,
+#searchWholeWord.biPressed,
+#filterErrorsBtn.biPressed {
+  transition: 0.2s;
+  transform: scale(0.98);
+  color: var(--third-color);
+  box-sizing: border-box;
+  background: var(--second-color) !important;
+  border: 3px solid var(--third-color);
 }
+
 
 .card>div>input[type='text']{
     border: 3px solid var(--second-color);
@@ -367,6 +386,7 @@ ul>li{
 }
 
 .containerTable{
+    position: relative;
     border: 3px solid var(--second-color);
     border-radius: 20px;
     padding: 20px;
@@ -376,6 +396,24 @@ ul>li{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.containerTable .line-badge {
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.containerTable .line-badge label {
+    color: var(--second-color);
+}
+
+
+.containerTable .lineNumber {
+    color: var(--third-color);
+    margin-left: 5px;
 }
 
 .responseLabel{
@@ -454,3 +492,5 @@ i .alert{
     opacity: 100%;
     transition: 0.3s;
 }
+
+

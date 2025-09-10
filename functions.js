@@ -1,8 +1,12 @@
-function SetLength(linha,response){
-
-            response = response.concat("<tr><td> </td><td> </td></tr><tr><td><label>TAMANHO LINHA:</label></td><td> " + linha.length + "</td></tr></table></div>")
-
-        return response
+function SetLength(linha, response, lineNumber){
+  response = response.concat(
+    "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>" +
+    "<tr><td><label>TAMANHO LINHA:</label></td><td> " + linha.length + "</td></tr>" +
+    "</table>" +
+    "<div class='line-badge'><label>LINHA: </label><lable class='lineNumber'>" + lineNumber + "</lable></div>" +
+    "</div>"
+  );
+  return response;
 }
 
 function ValidateEmptySpace(analise,id,idNumber,responseValidate = "vazio"){
@@ -35,7 +39,7 @@ function ValidateEmptySpace(analise,id,idNumber,responseValidate = "vazio"){
 
 }
 
-function Ooo(linha, type){
+function Ooo(linha, type, lineNumber){
         var idReg = linha.slice(0,3)
         var idRem = linha.slice(3,38)
         var idDes = linha.slice(38,73)
@@ -51,7 +55,7 @@ function Ooo(linha, type){
             "</td></tr>\n<tr><td><label>IDENTIFICAÇÃO DO INTERCÂMBIO:</label></td><td> " + ValidateEmptySpace(idInter,0,8)
         )  
         var filler = linha.slice(95,169)
-        response = SetLength(linha,response)   
+        response = SetLength(linha,response,lineNumber)   
         if( type == "responseArqLabel"){
                 document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
         }
@@ -60,7 +64,7 @@ function Ooo(linha, type){
         }
 }
 
-function Cccl(linha, type){
+function Cccl(linha, type, lineNumber){
         var idReg = linha.slice(0,3)
         var idRem = linha.slice(3,17)
         var response = (
@@ -68,11 +72,11 @@ function Cccl(linha, type){
             "</td></tr>\n<tr><td><label>IDENTIFICAÇÃO DO REMETENTE:</label></td><td> " + ValidateEmptySpace(idRem,1,1)
         )  
         var filler = linha.slice(17,169)
-        response = SetLength(linha,response)
+        response = SetLength(linha,response,lineNumber)
         document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
 }
 
-function Cccli(linha, type){
+function Cccli(linha, type, lineNumber){
         var idReg = linha.slice(0,3)
         var cgm = linha.slice(3,17)
         var razSoc = linha.slice(17,57)
@@ -81,7 +85,7 @@ function Cccli(linha, type){
                 "</td></tr>\n<tr><td><label>RAZÃO SOCIAL:</label></td><td> " + ValidateEmptySpace(razSoc,2,2)
         )  
         var filler = linha.slice(57,169)
-        response = SetLength(linha,response)
+        response = SetLength(linha,response,lineNumber)
         if( type == "responseArqLabel"){
                 document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
         }
@@ -90,7 +94,7 @@ function Cccli(linha, type){
         }
 }
 
-function Ccclii(linha, type){
+function Ccclii(linha, type, lineNumber){
         var idReg = linha.slice(0,3)
         var filEmiDoc = linha.slice(3,13)
         var tipDocCob = linha.slice(13,14)
@@ -131,7 +135,7 @@ function Ccclii(linha, type){
                 "</td></tr>\n<tr><td><label>AÇÃO DO DOCUMENTO:</label></td><td> " + ValidateEmptySpace(acaoDoc,3,26)
         )  
         var filler = linha.slice(167,169)
-        response = SetLength(linha,response)
+        response = SetLength(linha,response,lineNumber)
         if( type == "responseArqLabel"){
                 document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
         }
@@ -140,7 +144,7 @@ function Ccclii(linha, type){
         }
 }
 
-function Cccliii(linha, type){
+function Cccliii(linha, type, lineNumber){
         var idReg = linha.slice(0,3)
         var filEmiDoc = linha.slice(3,13)
         var serCon = linha.slice(13,18)
@@ -151,7 +155,7 @@ function Cccliii(linha, type){
                 "</td></tr>\n<tr><td><label>NÚMERO DO CONHECIMENTO:</label></td><td> " + ValidateEmptySpace(numCon,4,3)
         )  
         var filler = linha.slice(30,169)
-        response = SetLength(linha,response)
+        response = SetLength(linha,response,lineNumber)
         if( type == "responseArqLabel"){
                 document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
         }
@@ -160,7 +164,7 @@ function Cccliii(linha, type){
         }
 }
 
-function Cccliv(linha, type){
+function Cccliv(linha, type, lineNumber){
         const status = [1,0,1,1,1,1,1,1,1,1,0,0]// 1 = M --- 0 = C
         var idReg = linha.slice(0,3)
         var serie = linha.slice(3,6)
@@ -178,7 +182,7 @@ function Cccliv(linha, type){
                 "</td></tr>\n<tr><td><label>CGC DO EMISSOR DA NOTA FISCAL:</label></td><td> " + ValidateEmptySpace(cgcEmiNF,5,10)
         )  
         filler = linha.slice(58,169)
-        response = SetLength(linha,response)
+        response = SetLength(linha,response,lineNumber)
         if( type == "responseArqLabel"){
                 document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
         }
@@ -187,7 +191,7 @@ function Cccliv(linha, type){
         }
 }
 
-function Ccclv(linha, type){
+function Ccclv(linha, type, lineNumber){
         const status = [1,1,1,1,0]// 1 = M --- 0 = C
         var idReg = linha.slice(0,3)
         var qTotDocCob = linha.slice(3,7)
@@ -197,7 +201,7 @@ function Ccclv(linha, type){
                 "</td></tr>\n<tr><td><label>VALOR TOTAL DOCTOS. DE COBRANÇA:</label></td><td> " + ValidateEmptySpace(vTotDocCob[0],6,2).replace(/^0+/,"") + "," + ValidateEmptySpace(vTotDocCob[1],6,3) + " <label class='mini'>(" + vTotDocCob[0] + "," + vTotDocCob[1] + ")</label>"
         )  
         var filler = linha.slice(30,169)
-        response = SetLength(linha,response)
+        response = SetLength(linha,response,lineNumber)
         if( type == "responseArqLabel"){
                 document.getElementById(type).innerHTML = document.getElementById(type).innerHTML + response
         }
