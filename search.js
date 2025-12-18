@@ -96,14 +96,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // === NOVO: destaca todos os ícones de erro ===
+  // destaca todos os problemas (qualquer erro renderizado com .problem)
   function highlightErrors() {
-    const icons = container.querySelectorAll(".bi-exclamation-triangle-fill");
-    icons.forEach(icon => {
+    const problems = container.querySelectorAll(".problem");
+    problems.forEach(problem => {
       const mark = document.createElement("mark");
       mark.className = "hl";
-      icon.parentNode.insertBefore(mark, icon);
-      mark.appendChild(icon);    // embrulha o ícone no <mark>
+      problem.parentNode.insertBefore(mark, problem);
+      mark.appendChild(problem);
       marks.push(mark);
     });
   }
@@ -187,6 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
   btnErrors?.addEventListener("click", (e) => {
     e.preventDefault();
     btnErrors.classList.toggle("biPressed");
+    // filtra visualmente para só mostrar blocos com erro
+    container.classList.toggle("only-errors", btnErrors.classList.contains("biPressed"));
     debouncedRunSearch();
   });
 

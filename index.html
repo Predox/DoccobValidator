@@ -17,8 +17,52 @@
 <body>
     <header>
         <div id="title"><h1>Doccob</h1><h2>VALIDATOR</h2></div>
-        <p>&emsp; O Doccob Validator é uma ferramenta que valida arquivos no Layout de Doccob Proceda, verificando sua estrutura, campos obrigatórios e regras de negócio. Ele ajuda a identificar erros e inconsistências, garantindo a conformidade dos dados com as especificações exigidas.</p>
+        <p>&emsp; O Doccob Validator é uma ferramenta que valida arquivos no layout DOCCOB, verificando estrutura, campos obrigatórios e regras de negócio. Ele ajuda a identificar erros e inconsistências, garantindo conformidade com as especificações do guia.</p>
     </header>
+
+    <!-- Barra fixa de controles (layout, estatísticas e ações rápidas) -->
+    <section class="toolbar" aria-label="Controles">
+        <div class="toolbar-left">
+            <div class="layout-toggle" title="Alternar layout de validação">
+                <span class="layout-toggle__label">Layout</span>
+                <label class="switch" aria-label="Alternar entre DOCCOB 3.0A e 5.0">
+                    <input id="layoutToggle" type="checkbox" />
+                    <span class="slider"></span>
+                </label>
+                <span id="layoutToggleValue" class="layout-toggle__value">3.0A</span>
+            </div>
+
+            <div class="help-links">
+                <a class="chip" href="DOCCO31.pdf" target="_blank" rel="noopener">Guia 3.0A</a>
+                <a class="chip" href="DOCCOB-50.pdf" target="_blank" rel="noopener">Guia 5.0</a>
+            </div>
+        </div>
+
+        <div class="toolbar-right">
+            <div class="stats" aria-label="Resumo">
+                <span class="stat"><i class="bi bi-list-check"></i> <b id="statLines">0</b> linhas</span>
+                <span class="stat stat--error"><i class="bi bi-exclamation-triangle-fill"></i> <b id="statErrors">0</b> erros</span>
+                <span class="stat stat--warn"><i class="bi bi-info-circle-fill"></i> <b id="statWarnings">0</b> avisos</span>
+            </div>
+
+            <button id="btnExpandAll" type="button" class="chip chip--ghost" title="Expandir todos os blocos">Expandir tudo</button>
+            <button id="btnCollapseAll" type="button" class="chip chip--ghost" title="Recolher todos os blocos">Recolher tudo</button>
+            <button id="btnClear" type="button" class="chip chip--danger" title="Limpar resultados">Limpar</button>
+        </div>
+    </section>
+
+    <!-- Legenda (aparece quando existe resultado) -->
+    <section id="legend" class="legend" aria-label="Legenda" hidden>
+        <div class="legend__title"><i class="bi bi-compass"></i> Legenda</div>
+        <div class="legend__items">
+            <span class="legend__item"><i class="bi bi-exclamation-triangle-fill issue issue--error"></i> Campo obrigatório vazio</span>
+            <span class="legend__item"><i class="bi bi-calendar-x-fill issue issue--error"></i> Data inválida</span>
+            <span class="legend__item"><i class="bi bi-clock-history issue issue--error"></i> Hora inválida</span>
+            <span class="legend__item"><i class="bi bi-rulers issue issue--warn"></i> Tamanho diferente do esperado</span>
+            <span class="legend__item"><i class="bi bi-question-circle-fill issue issue--warn"></i> Valor fora do padrão</span>
+        </div>
+    </section>
+
     <main>
         <form class="card" method="post">
             <h2>Como deseja Verificar?</h2>
@@ -43,7 +87,7 @@
             <h2 id="validateArq">Validar por Arquivo</h2>
             <div id="buscaSentinel"></div>
             <div class="busca" id="buscaArq">
-                <i class="bi bi-exclamation-triangle-fill" id="filterErrorsBtn" title="Mostrar apenas erros"></i>
+                <i class="bi bi-exclamation-triangle-fill" id="filterErrorsBtn" title="Mostrar apenas linhas com erro"></i>
 
                 <div class="barraBusca">
                     <input type="text" class="inputBusca" placeholder="Buscar no resultado...">
@@ -58,18 +102,22 @@
 
             <div id="getArq">
                 <label for="arquivo" class="cardButton"><i class="bi bi-upload"></i></label>
-                <input type="file" id="arquivo" onchange="LerArquivo()" style="display: none;">
+                <input type="file" id="arquivo" accept=".txt" style="display: none;">
+                <div class="dropHint">
+                    <div class="dropHint__title">Arraste e solte um arquivo aqui</div>
+                    <div class="dropHint__subtitle">ou clique no ícone para selecionar</div>
+                </div>
             </div>
-            <label class="responseLabel" id="responseArqLabel"></label>
+            <div class="responseLabel" id="responseArqLabel"></div>
         </form>
         <form action="" class="card" method="post">
             <h2 id="validateLine">Validar por linha</h2>
             <div id="getLine">
                 <input type="text" name="line" id="line" placeholder="Digite a linha que deseja validar">
-                <label id="send" for="btn-send" onclick="ValidateLine()"><i class="bi bi-arrow-left-circle"></i></label>
+                <label id="send" for="btn-send"><i class="bi bi-arrow-left-circle"></i></label>
                 <input type="button" id="btn-send" style="display: none;"></button>
             </div>
-            <label class="responseLabel" id="responseLineLabel"></label>
+            <div class="responseLabel" id="responseLineLabel"></div>
         </form>
     </main>
 </body>
